@@ -16,14 +16,11 @@ public class Respawn : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update() {
         if (transform.position.y < yPlane) {
-            Debug.Log("resetting");
             transform.position = initialPosition;
             transform.rotation = initialRotation;
             rb.velocity = Vector3.zero;
         }
-
     }
 }
