@@ -16,8 +16,8 @@ public class Respawn : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update() {
-        if (transform.position.y < yPlane) {
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("DeathZone")) {
             transform.position = initialPosition;
             transform.rotation = initialRotation;
             rb.velocity = Vector3.zero;

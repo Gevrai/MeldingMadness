@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3504734985643172847}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 16e7f855624e5ba4eb3283a774c8294f, type: 2}
+  - {fileID: 2100000, guid: ae20cc1acb9d2224e8eddb17710c6dca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,11 +92,11 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6724525154558330188}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d54edf0ce1a6dba459e37a253a941a70, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.522529
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6724525154558330193
 Rigidbody:
@@ -107,7 +107,7 @@ Rigidbody:
   m_GameObject: {fileID: 6724525154558330188}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.3
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -126,9 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb60e6d0cc6ebf4aa4e79e7a4de62e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  jumpImpulse: 10
-  boostImpulse: 10
+  playerNumber: 1
+  movementSpeed: 2
+  compensateRatio: 5
+  jumpImpulse: 5
+  boostImpulse: 15
   boostDelay: 2
 --- !u!114 &-3504734985643172847
 MonoBehaviour:
