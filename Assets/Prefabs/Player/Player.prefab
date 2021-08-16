@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ae20cc1acb9d2224e8eddb17710c6dca, type: 2}
+  - {fileID: 2100000, guid: a1c84dd24b00b8d4aa903452b5303c3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,10 +127,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 1
-  movementSpeed: 2
-  compensateRatio: 5
-  jumpImpulse: 5
-  boostImpulse: 15
+  playerColor: {r: 0.0094099045, g: 0, b: 1, a: 0}
+  movementSpeed: 15
+  brakeCompensation: 8
+  jumpImpulse: 3
+  boostImpulse: 10
   boostDelay: 2
 --- !u!114 &-3504734985643172847
 MonoBehaviour:

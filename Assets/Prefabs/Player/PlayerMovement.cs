@@ -27,8 +27,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void InitPlayer() {
         GetComponent<Renderer>().material.SetColor("_EmissionColor", playerColor);
-        DynamicGI.UpdateEnvironment();
     }
+
     void Start() {
         camera = Camera.main;
         rb = GetComponent<Rigidbody>();
@@ -43,16 +43,16 @@ public class PlayerMovement : MonoBehaviour {
         bool boost = false;
 
         if (playerNumber == 1) {
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
-            boost = Input.GetButtonDown("Fire1");
-            jump = Input.GetButtonDown("Jump");
+            horizontal = Input.GetAxis("Horizontal1");
+            vertical = Input.GetAxis("Vertical1");
+            boost = Input.GetButton("Boost1");
+            jump = Input.GetButton("Jump1");
         }
         if (playerNumber == 2) {
             horizontal = Input.GetAxis("Horizontal2");
             vertical = Input.GetAxis("Vertical2");
-            boost = Input.GetButtonDown("Boost2");
-            jump = Input.GetButtonDown("Jump2");
+            boost = Input.GetButton("Boost2");
+            jump = Input.GetButton("Jump2");
         }
 
         // Direction based on camera's forward
