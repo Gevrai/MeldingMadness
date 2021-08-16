@@ -17,7 +17,7 @@ public class Respawn : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("DeathZone")) {
+        if (collision.gameObject.CompareTag(Tags.DEATH_ZONE)) {
             transform.position = initialPosition;
             transform.rotation = initialRotation;
             rb.velocity = Vector3.zero;

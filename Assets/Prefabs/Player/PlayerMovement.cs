@@ -6,10 +6,10 @@ public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] int playerNumber;
     [SerializeField] Color playerColor;
-    [SerializeField] float movementSpeed;
-    [SerializeField] float compensateRatio;
-    [SerializeField] float jumpImpulse;
 
+    [SerializeField] float movementSpeed;
+    [SerializeField] float brakeCompensation;
+    [SerializeField] float jumpImpulse;
     [SerializeField] float boostImpulse;
     [SerializeField] float boostDelay;
 
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
         coll = GetComponent<Collider>();
     }
 
-    void Update() {
+    void FixedUpdate() {
 
         float horizontal = 0;
         float vertical = 0;
@@ -60,11 +60,12 @@ public class PlayerMovement : MonoBehaviour {
         var camV = VectorUtils.StripY(camera.transform.forward).normalized;
         var direction = horizontal * camH + vertical * camV;
 
+        // If direction goes against current velocity, give a little help to stop.
         var dot = Vector3.Dot(direction.normalized, rb.velocity.normalized);
-        var compensate = dot < 0 ? 1 + (-dot * compensateRatio) : 1;
+        var brakeRatio = dot < 0 ? 1 + (-dot * brakeCompensation) : 1;
 
         // Move
-        rb.AddForce(compensate * movementSpeed * direction);
+        rb.AddForce(brakeRatio * movementSpeed * direction);
 
         // Boost!
         if (boost && CanBoost) {
