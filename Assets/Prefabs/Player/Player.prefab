@@ -127,9 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 1
-  playerColor: {r: 0.0094099045, g: 0, b: 1, a: 0}
+  playerColor: {r: 0.0045134346, g: 0, b: 0.5754717, a: 0}
   movementSpeed: 15
-  brakeCompensation: 8
+  brakeCompensation: 3
   jumpImpulse: 3
   boostImpulse: 10
   boostDelay: 2
